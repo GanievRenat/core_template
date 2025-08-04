@@ -1,0 +1,41 @@
+name: taro_client
+
+packages:
+  - .
+  #packages: - packages/*
+
+scripts:
+  clean:
+    run: flutter clean
+    description: Очистка сборки проекта.
+
+  bootstrap:
+    run: flutter pub get
+    description: Устанавливает зависимости для всех пакетов.
+
+  generate:
+    run: |
+      flutter pub run build_runner build --delete-conflicting-outputs
+      flutter pub run easy_localization:generate --source-dir assets/translations -f keys -o locale_keys.g.dart
+      dart run flutter_native_splash:create
+      flutter pub run flutter_launcher_icons
+    description: Генерация кода.
+
+  analyze:
+    run: flutter analyze
+    description: Анализ кода на ошибки.
+
+  format:
+    run: dart format . --set-exit-if-changed
+    description: Форматирование кода.
+
+  go:
+    run: |
+      flutter clean
+      flutter pub get
+      flutter pub run build_runner build --delete-conflicting-outputs
+      flutter pub run easy_localization:generate --source-dir assets/translations -f keys -o locale_keys.g.dart
+      dart run flutter_native_splash:create
+      flutter pub run flutter_launcher_icons
+      dart format . --set-exit-if-changed
+    description: Запускаем все.

@@ -1,0 +1,110 @@
+name: core_template
+description: "Core Template Project"
+publish_to: "none"
+version: 0.1.0
+
+environment:
+  sdk: ^3.8.0
+
+dependencies:
+  flutter:
+    sdk: flutter
+  # Зависимости
+  get_it: ^8.0.3
+  injectable: ^2.5.1
+
+  # Роутинг
+  go_router: ^16.0.0
+
+  # Локализация
+  easy_localization: ^3.0.8
+
+  # Работа с сетью
+  dio: ^5.8.0+1
+  retrofit: ^4.7.0
+  internet_connection_checker: ^3.0.1
+  freezed_annotation: ^3.1.0
+
+  # База данных
+  drift: ^2.25.1
+  drift_flutter: ^0.2.4
+  sqlite3: ^2.7.3
+  path_provider: ^2.1.5
+
+  # Локальное хранилище
+  shared_preferences: ^2.5.3
+  flutter_secure_storage: ^9.2.4
+
+  # Логирование
+  logger: ^2.6.1
+
+  # Стейт
+  flutter_bloc: ^9.1.1
+  equatable: ^2.0.7
+  either_dart: ^1.0.0
+
+  # Аналитика
+
+  # Firebase
+  firebase_core: ^3.14.0
+  firebase_auth: ^5.6.0
+  cloud_firestore: ^5.6.9
+  firebase_crashlytics: ^4.3.8
+  firebase_remote_config: ^5.5.0
+
+  # Авторизация Apple и Google
+  google_sign_in: ^6.3.0
+  sign_in_with_apple: ^7.0.1
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^5.0.0
+  injectable_generator: ^2.7.0
+  json_serializable: ^6.8.0
+  build_runner: ^2.5.0
+  drift_dev: ^2.27.0
+  go_router_builder: ^2.7.0
+  flutter_gen_runner: ^5.11.0
+  freezed: ^3.1.0
+  retrofit_generator: ^9.7.0
+
+  flutter_svg: ^2.2.0
+  melos: ^6.3.3
+
+  flutter_native_splash: ^2.4.6
+  flutter_launcher_icons: ^0.14.4
+
+flutter_launcher_icons:
+  android: "launcher_icon"
+  ios: true
+  image_path: assets/images/launch/launch_icon.png
+  min_sdk_android: 21
+
+flutter_gen:
+  integrations:
+    flutter_svg: true
+  line_length: 120
+  output: lib/generated/
+flutter_icons:
+  image_path: assets/images/launch/launch_icon.png
+  android: true
+  ios: true
+
+flutter:
+  uses-material-design: true
+  assets:
+    - assets/images/
+    - assets/images/icons/
+    - assets/translations/
+  fonts:
+    - family: Roboto
+      fonts:
+        - asset: assets/fonts//Roboto-Bold.ttf
+          weight: 700
+        - asset: assets/fonts//Roboto-Medium.ttf
+          weight: 500
+        - asset: assets/fonts//Roboto-Regular.ttf
+          weight: 400
+        - asset: assets/fonts//Roboto-Light.ttf
+          weight: 300
